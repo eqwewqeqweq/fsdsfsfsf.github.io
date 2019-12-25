@@ -39,6 +39,107 @@
 
 <!-- / Yoast SEO plugin. -->
 
+
+<script type="text/javascript">
+(function(w){
+	"use strict";
+	/* exported loadCSS */
+	var loadCSS = function( href, before, media, attributes ){
+		// Arguments explained:
+		// `href` [REQUIRED] is the URL for your CSS file.
+		// `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
+		// By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
+		// `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
+		// `attributes` [OPTIONAL] is the Object of attribute name/attribute value pairs to set on the stylesheet's DOM Element.
+		var doc = w.document;
+		var ss = doc.createElement( "link" );
+		var ref;
+		if( before ){
+			ref = before;
+		}
+		else {
+			var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
+			ref = refs[ refs.length - 1];
+		}
+
+		var sheets = doc.styleSheets;
+		// Set any of the provided attributes to the stylesheet DOM Element.
+		if( attributes ){
+			for( var attributeName in attributes ){
+				if( attributes.hasOwnProperty( attributeName ) ){
+					ss.setAttribute( attributeName, attributes[attributeName] );
+				}
+			}
+		}
+		ss.rel = "stylesheet";
+		ss.href = href;
+		// temporarily set media to something inapplicable to ensure it'll fetch without blocking render
+		ss.media = "only x";
+
+		// wait until body is defined before injecting link. This ensures a non-blocking load in IE11.
+		function ready( cb ){
+			if( doc.body ){
+				return cb();
+			}
+			setTimeout(function(){
+				ready( cb );
+			});
+		}
+		// Inject link
+			// Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
+			// Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
+		ready( function(){
+			ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
+		});
+		// A method (exposed on return object for external use) that mimics onload by polling document.styleSheets until it includes the new sheet.
+		var onloadcssdefined = function( cb ){
+			var resolvedHref = ss.href;
+			var i = sheets.length;
+			while( i-- ){
+				if( sheets[ i ].href === resolvedHref ){
+					return cb();
+				}
+			}
+			setTimeout(function() {
+				onloadcssdefined( cb );
+			});
+		};
+
+		function loadCB(){
+			if( ss.addEventListener ){
+				ss.removeEventListener( "load", loadCB );
+			}
+			ss.media = media || "all";
+		}
+
+		// once loaded, set link's media back to `all` so that the stylesheet applies once it loads
+		if( ss.addEventListener ){
+			ss.addEventListener( "load", loadCB);
+		}
+		ss.onloadcssdefined = onloadcssdefined;
+		onloadcssdefined( loadCB );
+		return ss;
+	};
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ));
+
+</script>
+<script id="loadcss">
+  // load a CSS file just before the script element containing this code
+  loadCSS( "https://simply-crm.com/wp-content/plugins/cookie-notice/css/front.min.css?ver=5.0.3", document.getElementById("loadcss") );
+  loadCSS( "https://simply-crm.com/wp-content/plugins/geotargeting-pro/public/css/geotarget-public.css?ver=2.6.1", document.getElementById("loadcss") );
+  loadCSS( "https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/wordpress-country-selector-public.css?ver=1.5.5", document.getElementById("loadcss") );
+  loadCSS( "https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/bootstrap.min.css?ver=1.5.5", document.getElementById("loadcss") );
+  loadCSS( "https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/mapglyphs.css?ver=1.5.5", document.getElementById("loadcss") );
+
+</script>
+
 <link rel='dns-prefetch' href='//cdn.jsdelivr.net' />
 <link rel='dns-prefetch' href='//maxcdn.bootstrapcdn.com' />
 <link rel='dns-prefetch' href='//fonts.googleapis.com' />
@@ -58,48 +159,6 @@ img.emoji {
 	padding: 0 !important;
 }
 </style>
-<link media="bogus"rel='stylesheet' id='cookie-notice-front-css'  href='https://simply-crm.com/wp-content/plugins/cookie-notice/css/front.min.css?ver=5.0.3' type='text/css' media='all' />
-<link media="bogus"rel='stylesheet' id='geotarget-css'  href='https://simply-crm.com/wp-content/plugins/geotargeting-pro/public/css/geotarget-public.css?ver=2.6.1' type='text/css' media='all' />
-<link media="bogus"rel='stylesheet' id='wordpress-country-selector-css'  href='https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/wordpress-country-selector-public.css?ver=1.5.5' type='text/css' media='all' />
-<link media="bogus"rel='stylesheet' id='wordpress-country-selector-bootstrap-css'  href='https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/bootstrap.min.css?ver=1.5.5' type='text/css' media='all' />
-<link media="bogus"rel='stylesheet' id='wordpress-country-selector-mapglyphs-css'  href='https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/mapglyphs.css?ver=1.5.5' type='text/css' media='all' />
-<link rel='stylesheet' id='wordpress-country-selector-flag-icon-css'  href='https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/flag-icon.min.css?ver=1.5.5' type='text/css' media='all' />
-<link media="bogus" crossorigin="anonymous" rel='stylesheet' id='font-awesome-css'  href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.7.0' type='text/css' media="bogus" media='all' />
-<link media="bogus" rel='stylesheet' id='wordpress-country-selector-custom-css'  href='https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/wordpress-country-selector-custom.css?ver=1.5.5' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='wpml-legacy-dropdown-0-css'  href='//simply-crm.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown/style.css?ver=1' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='wpml-menu-item-0-css'  href='//simply-crm.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/menu-item/style.css?ver=1' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='parent-style-css'  href='https://simply-crm.com/wp-content/themes/salient/style.css?ver=10.0.1' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='jellybox-styles-css'  href='https://simply-crm.com/wp-content/themes/salient-child/css/jellybox.css?ver=5.0.3' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='bootstrap-toggle-styles-css'  href='https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css?ver=5.0.3' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='rgs-css'  href='https://simply-crm.com/wp-content/themes/salient/css/rgs.css?ver=10.0.1' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='main-styles-css'  href='https://simply-crm.com/wp-content/themes/salient-child/style.css?ver=10.0.1' type='text/css' media='all' />
-<style id='main-styles-inline-css' type='text/css'>
-html body[data-header-resize="1"] .container-wrap, html body[data-header-resize="0"] .container-wrap, body[data-header-format="left-header"][data-header-resize="0"] .container-wrap { padding-top: 0; }
-html:not(.page-trans-loaded) { background-color: #ffffff; }
-</style>
-<link rel='stylesheet' id='fancyBox-css'  href='https://simply-crm.com/wp-content/themes/salient/css/jquery.fancybox.css?ver=9.0' type='text/css' media='all' />
-<!--[if lt IE 9]>
-<link rel='stylesheet' id='nectar-ie8-css'  href='https://simply-crm.com/wp-content/themes/salient/css/ie8.css?ver=5.0.3' type='text/css' media='all' />
-<![endif]-->
-<link media="bogus" rel='stylesheet' id='responsive-css'  href='https://simply-crm.com/wp-content/themes/salient/css/responsive.css?ver=10.0.1' type='text/css' media='all' />
-<link crossorigin="anonymous" rel='stylesheet' id='options_typography_OpenSans_ext-css'  href='https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700&#038;subset=latin%2Clatin-ext' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='skin-material-css'  href='https://simply-crm.com/wp-content/themes/salient/css/skin-material.css?ver=10.0.1' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='js_composer_front-css'  href='https://simply-crm.com/wp-content/plugins/js_composer_salient/assets/css/js_composer.min.css?ver=5.6' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='gforms_reset_css-css'  href='https://simply-crm.com/wp-content/plugins/gravityforms/css/formreset.min.css?ver=2.4.16' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='gforms_formsmain_css-css'  href='https://simply-crm.com/wp-content/plugins/gravityforms/css/formsmain.min.css?ver=2.4.16' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='gforms_ready_class_css-css'  href='https://simply-crm.com/wp-content/plugins/gravityforms/css/readyclass.min.css?ver=2.4.16' type='text/css' media='all' />
-<link media="bogus" rel='stylesheet' id='gforms_browsers_css-css'  href='https://simply-crm.com/wp-content/plugins/gravityforms/css/browsers.min.css?ver=2.4.16' type='text/css' media='all' />
-<link media="bogus"crossorigin="anonymous" rel='stylesheet' id='redux-google-fonts-salient_redux-css'  href='https://fonts.googleapis.com/css?family=Ubuntu%3A300&#038;ver=1567154691' type='text/css' media='all' />
-<link media="bogus"rel='stylesheet' id='jquery.contactus.css-css'  href='https://simply-crm.com/wp-content/plugins/ar-contactus/res/css/jquery.contactus.min.css?ver=1.6.6' type='text/css' media='all' />
-<link media="bogus"rel='stylesheet' id='contactus.generated.desktop.css-css'  href='https://simply-crm.com/wp-content/plugins/ar-contactus/res/css/generated-desktop.css?ver=1577119613' type='text/css' media='all' />
-<link media="bogus"rel='stylesheet' id='contactus.fa.css-css'  href='https://use.fontawesome.com/releases/v5.8.1/css/all.css?ver=1.6.6' type='text/css' media='all' />
-
-<link media="bogus" rel='https://api.w.org/' href='https://simply-crm.com/wp-json/' />
-<link media="bogus" rel="EditURI" type="application/rsd+xml" title="RSD" href="https://simply-crm.com/xmlrpc.php?rsd" />
-<link media="bogus" rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://simply-crm.com/wp-includes/wlwmanifest.xml" /> 
-<meta media="bogus" name="generator" content="WordPress 5.0.3" />
-<link media="bogus" rel="alternate" type="application/json+oembed" href="https://simply-crm.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsimply-crm.com%2F" />
-<link media="bogus" rel="alternate" type="text/xml+oembed" href="https://simply-crm.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsimply-crm.com%2F&#038;format=xml" />
 
 
 <meta name="generator" content="WPML ver:4.2.0 stt:12,1,3,39,46,2;" />
@@ -1250,15 +1309,5 @@ CVR: 33970080</p>
             </div>
         </div>
 
-
-<script type="text/javascript">
-(function(){
-  var bsa = document.createElement('script');
-     bsa.type = 'text/javascript';
-     bsa.async = true;
-     bsa.src = 'https://s3.buysellads.com/ac/bsa.js';
-  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
-})();
-</script>
 </body>
 </html>
