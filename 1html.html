@@ -40,8 +40,6 @@
 <meta name="twitter:description" content="Simply CRM, the last customer relationship management you need for your business. Gain more customers, optimize your business and earn more money - simply!" />
 <meta name="twitter:title" content="Simply CRM | Gain Customers - Optimize Your Business" />
 <meta name="twitter:image" content="https://simply-crm.com/wp-content/uploads/2019/02/simply-top-screenshot.jpg" />
-<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://simply-crm.com/#organization","name":"Simply CRM","url":"https://simply-crm.com/","sameAs":[],"logo":{"@type":"ImageObject","@id":"https://simply-crm.com/#logo","url":"https://simply-crm.com/wp-content/uploads/2019/02/mew-simply-logo-240px.png","width":240,"height":127,"caption":"Simply CRM"},"image":{"@id":"https://simply-crm.com/#logo"}},{"@type":"WebSite","@id":"https://simply-crm.com/#website","url":"https://simply-crm.com/","name":"Simply CRM","publisher":{"@id":"https://simply-crm.com/#organization"},"potentialAction":{"@type":"SearchAction","target":"https://simply-crm.com/?s={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"WebPage","@id":"https://simply-crm.com/#webpage","url":"https://simply-crm.com/","inLanguage":"en-US","name":"Simply CRM | Gain Customers - Optimize Your Business","isPartOf":{"@id":"https://simply-crm.com/#website"},"about":{"@id":"https://simply-crm.com/#organization"},"image":{"@type":"ImageObject","@id":"https://simply-crm.com/#primaryimage","url":"https://simply-crm.com/wp-content/uploads/2019/02/simply-top-screenshot.jpg","width":1000,"height":731,"caption":"Simply CRM"},"primaryImageOfPage":{"@id":"https://simply-crm.com/#primaryimage"},"datePublished":"2019-01-26T11:05:13+00:00","dateModified":"2019-10-01T10:29:43+00:00","description":"Simply CRM, the last customer relationship management you need for your business. Gain more customers, optimize your business and earn more money - simply!"}]}</script>
-<!-- / Yoast SEO plugin. -->
 
 <script type='text/javascript' src='https://simply-crm.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
 <script type='text/javascript' src='https://simply-crm.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
@@ -97,137 +95,12 @@ var wpml_xdomain_data = {"css_selector":"wpml-ls-item","ajax_url":"https:\/\/sim
 </script>
 <script type='text/javascript' src='https://simply-crm.com/wp-content/plugins/sitepress-multilingual-cms/res/js/xdomain-data.js?ver=4.2.0'></script>
 <script type='text/javascript' src='https://simply-crm.com/wp-content/plugins/ar-contactus/res/js/scripts.js?ver=1.6.6'></script>
-
-<script type="text/javascript">
-(function(w){
-	"use strict";
-	/* exported loadCSS */
-	var loadCSS = function( href, before, media, attributes ){
-		// Arguments explained:
-		// `href` [REQUIRED] is the URL for your CSS file.
-		// `before` [OPTIONAL] is the element the script should use as a reference for injecting our stylesheet <link> before
-		// By default, loadCSS attempts to inject the link after the last stylesheet or script in the DOM. However, you might desire a more specific location in your document.
-		// `media` [OPTIONAL] is the media type or query of the stylesheet. By default it will be 'all'
-		// `attributes` [OPTIONAL] is the Object of attribute name/attribute value pairs to set on the stylesheet's DOM Element.
-		var doc = w.document;
-		var ss = doc.createElement( "link" );
-		var ref;
-		if( before ){
-			ref = before;
-		}
-		else {
-			var refs = ( doc.body || doc.getElementsByTagName( "head" )[ 0 ] ).childNodes;
-			ref = refs[ refs.length - 1];
-		}
-
-		var sheets = doc.styleSheets;
-		// Set any of the provided attributes to the stylesheet DOM Element.
-		if( attributes ){
-			for( var attributeName in attributes ){
-				if( attributes.hasOwnProperty( attributeName ) ){
-					ss.setAttribute( attributeName, attributes[attributeName] );
-				}
-			}
-		}
-		ss.rel = "stylesheet";
-		ss.href = href;
-		// temporarily set media to something inapplicable to ensure it'll fetch without blocking render
-		ss.media = "only x";
-
-		// wait until body is defined before injecting link. This ensures a non-blocking load in IE11.
-		function ready( cb ){
-			if( doc.body ){
-				return cb();
-			}
-			setTimeout(function(){
-				ready( cb );
-			});
-		}
-		// Inject link
-			// Note: the ternary preserves the existing behavior of "before" argument, but we could choose to change the argument to "after" in a later release and standardize on ref.nextSibling for all refs
-			// Note: `insertBefore` is used instead of `appendChild`, for safety re: http://www.paulirish.com/2011/surefire-dom-element-insertion/
-		ready( function(){
-			ref.parentNode.insertBefore( ss, ( before ? ref : ref.nextSibling ) );
-		});
-		// A method (exposed on return object for external use) that mimics onload by polling document.styleSheets until it includes the new sheet.
-		var onloadcssdefined = function( cb ){
-			var resolvedHref = ss.href;
-			var i = sheets.length;
-			while( i-- ){
-				if( sheets[ i ].href === resolvedHref ){
-					return cb();
-				}
-			}
-			setTimeout(function() {
-				onloadcssdefined( cb );
-			});
-		};
-
-		function loadCB(){
-			if( ss.addEventListener ){
-				ss.removeEventListener( "load", loadCB );
-			}
-			ss.media = media || "all";
-		}
-
-		// once loaded, set link's media back to `all` so that the stylesheet applies once it loads
-		if( ss.addEventListener ){
-			ss.addEventListener( "load", loadCB);
-		}
-		ss.onloadcssdefined = onloadcssdefined;
-		onloadcssdefined( loadCB );
-		return ss;
-	};
-	// commonjs
-	if( typeof exports !== "undefined" ){
-		exports.loadCSS = loadCSS;
-	}
-	else {
-		w.loadCSS = loadCSS;
-	}
-}( typeof global !== "undefined" ? global : this ));
-
-</script>
-<script id="loadcss">
-  // load a CSS file just before the script element containing this code
-  loadCSS( " https://simply-crm.com/wp-content/plugins/cookie-notice/css/front.min.css?ver=5.0.3", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/geotargeting-pro/public/css/geotarget-public.css?ver=2.6.1", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/wordpress-country-selector-public.css?ver=1.5.5", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/bootstrap.min.css?ver=1.5.5", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/mapglyphs.css?ver=1.5.5", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/flag-icon.min.css?ver=1.5.5", document.getElementById("loadcss") );
-loadCSS( " https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.7.0", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/wordpress-country-selector-custom.css?ver=1.5.5", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/cookie-notice/css/front.min.css?ver=5.0.3", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/geotargeting-pro/public/css/geotarget-public.css?ver=2.6.1", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/wordpress-country-selector-public.css?ver=1.5.5", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/bootstrap.min.css?ver=1.5.5", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/mapglyphs.css?ver=1.5.5", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/flag-icon.min.css?ver=1.5.5", document.getElementById("loadcss") );
-loadCSS( " https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css?ver=4.7.0", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/wordpress-country-selector/public/css/wordpress-country-selector-custom.css?ver=1.5.5", document.getElementById("loadcss") );
-loadCSS( " //simply-crm.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/legacy-dropdown/style.css?ver=1", document.getElementById("loadcss") );
-loadCSS( " //simply-crm.com/wp-content/plugins/sitepress-multilingual-cms/templates/language-switchers/menu-item/style.css?ver=1", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/themes/salient/style.css?ver=10.0.1", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/themes/salient-child/css/jellybox.css?ver=5.0.3", document.getElementById("loadcss") );
-loadCSS( " https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css?ver=5.0.3", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/themes/salient/css/rgs.css?ver=10.0.1", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/themes/salient-child/style.css?ver=10.0.1", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/themes/salient/css/jquery.fancybox.css?ver=9.0", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/themes/salient/css/responsive.css?ver=10.0.1", document.getElementById("loadcss") );
-loadCSS( " https://fonts.googleapis.com/css?family=Open+Sans%3A300%2C400%2C600%2C700&#038;subset=latin%2Clatin-ext", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/themes/salient/css/skin-material.css?ver=10.0.1", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/js_composer_salient/assets/css/js_composer.min.css?ver=5.6", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/gravityforms/css/formreset.min.css?ver=2.4.16", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/gravityforms/css/formsmain.min.css?ver=2.4.16", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/gravityforms/css/readyclass.min.css?ver=2.4.16", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/gravityforms/css/browsers.min.css?ver=2.4.16", document.getElementById("loadcss") );
-loadCSS( " https://fonts.googleapis.com/css?family=Ubuntu%3A300&#038;ver=1567154691", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/ar-contactus/res/css/jquery.contactus.min.css?ver=1.6.6", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-content/plugins/ar-contactus/res/css/generated-desktop.css?ver=1577119613", document.getElementById("loadcss") );
-loadCSS( " https://use.fontawesome.com/releases/v5.8.1/css/all.css?ver=1.6.6", document.getElementById("loadcss") );
-loadCSS( " https://simply-crm.com/wp-json/", document.getElementById("loadcss") );
-</script>
+<link rel='https://api.w.org/' href='https://simply-crm.com/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://simply-crm.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://simply-crm.com/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.0.3" />
+<link rel="alternate" type="application/json+oembed" href="https://simply-crm.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsimply-crm.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://simply-crm.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsimply-crm.com%2F&#038;format=xml" />
 
 
 <meta name="generator" content="WPML ver:4.2.0 stt:12,1,3,39,46,2;" />
@@ -412,7 +285,7 @@ loadCSS( " https://simply-crm.com/wp-json/", document.getElementById("loadcss") 
 		<div class="row">
 			
 			
-		<div id="fws_5e03518a231b6"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row top-level full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section  main-p-first-row "  style="padding-top: 30px; padding-bottom: 30px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #eef3f8; "></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
+		<div id="fws_5e0354588b920"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row top-level full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section  main-p-first-row "  style="padding-top: 30px; padding-bottom: 30px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #eef3f8; "></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
 	<div style="margin-bottom: 30px!important; " class="vc_col-sm-8 wpb_column column_container vc_column_container col no-extra-padding"  data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
@@ -455,7 +328,7 @@ loadCSS( " https://simply-crm.com/wp-json/", document.getElementById("loadcss") 
 		</div>
 	</div> 
 </div></div>
-		<div id="fws_5e03518a260e3"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section   "  style="padding-top: 25px; padding-bottom: 25px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #0080ef; "></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
+		<div id="fws_5e0354588e874"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section   "  style="padding-top: 25px; padding-bottom: 25px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #0080ef; "></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
 	<div  class="vc_col-sm-2 wpb_column column_container vc_column_container col centered-text no-extra-padding"  data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
@@ -528,7 +401,7 @@ loadCSS( " https://simply-crm.com/wp-json/", document.getElementById("loadcss") 
 		</div>
 	</div> 
 </div></div>
-		<div id="fws_5e03518a28d61"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-top standard_section   "  style="padding-top: 60px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #ffffff; "></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
+		<div id="fws_5e0354589156f"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-top standard_section   "  style="padding-top: 60px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #ffffff; "></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
 	<div  class="vc_col-sm-4 wpb_column column_container vc_column_container col centered-text no-extra-padding"  data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
@@ -567,7 +440,7 @@ Free local language support, 24/7</p>
 		</div>
 	</div> 
 </div></div>
-		<div id="fws_5e03518a2aee3"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section   "  style="padding-top: 60px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg    "  style=""></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
+		<div id="fws_5e03545893737"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section   "  style="padding-top: 60px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg    "  style=""></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
 	<div  class="vc_col-sm-6 wpb_column column_container vc_column_container col centered-text padding-5-percent"  data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
@@ -594,7 +467,7 @@ Free local language support, 24/7</p>
 		</div>
 	</div> 
 </div></div>
-		<div id="fws_5e03518a2bf03"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-section  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section   "  style="padding-top: 60px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #ffffff; "></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
+		<div id="fws_5e035458945c8"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-section  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section   "  style="padding-top: 60px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #ffffff; "></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
 	<div  class="vc_col-sm-6 main-checklist wpb_column column_container vc_column_container col no-extra-padding"  data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
@@ -621,7 +494,7 @@ Free local language support, 24/7</p>
 		</div>
 	</div> 
 </div></div>
-		<div id="fws_5e03518a2cd60"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section   "  style="padding-top: 60px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg    "  style=""></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
+		<div id="fws_5e035458953f2"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section   "  style="padding-top: 60px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg    "  style=""></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
 	<div  class="vc_col-sm-6 wpb_column column_container vc_column_container col centered-text padding-5-percent"  data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
@@ -648,7 +521,7 @@ Free local language support, 24/7</p>
 		</div>
 	</div> 
 </div></div>
-		<div id="fws_5e03518a2dcb4"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-section  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section   "  style="padding-top: 60px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #ffffff; "></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
+		<div id="fws_5e0354589622f"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-section  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section   "  style="padding-top: 60px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #ffffff; "></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
 	<div  class="vc_col-sm-6 main-checklist wpb_column column_container vc_column_container col no-extra-padding"  data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
@@ -675,7 +548,7 @@ Free local language support, 24/7</p>
 		</div>
 	</div> 
 </div></div>
-		<div id="fws_5e03518a2eb3d"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-top standard_section   "  style="padding-top: 50px; padding-bottom: 90px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #eef8fc; "></div></div><div class="row-bg-overlay" ></div></div><div class="nectar-shape-divider-wrap no-color " style=" height:50px;"  data-front="" data-style="triangle" data-position="bottom" ><svg class="nectar-shape-divider" fill="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"> <polygon  points="501 53.27 0.5 0.56 0.5 100 1000.5 100 1000.5 0.66 501 53.27"/></svg></div><div class="col span_12 dark left">
+		<div id="fws_5e03545897015"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-top standard_section   "  style="padding-top: 50px; padding-bottom: 90px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #eef8fc; "></div></div><div class="row-bg-overlay" ></div></div><div class="nectar-shape-divider-wrap no-color " style=" height:50px;"  data-front="" data-style="triangle" data-position="bottom" ><svg class="nectar-shape-divider" fill="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none"> <polygon  points="501 53.27 0.5 0.56 0.5 100 1000.5 100 1000.5 0.66 501 53.27"/></svg></div><div class="col span_12 dark left">
 	<div  class="vc_col-sm-12 wpb_column column_container vc_column_container col centered-text no-extra-padding"  data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
@@ -684,7 +557,7 @@ Free local language support, 24/7</p>
 		</div>
 	</div> 
 </div></div>
-		<div id="fws_5e03518a2f394"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-top standard_section   "  style="padding-top: 30px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #ffffff; "></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
+		<div id="fws_5e0354589785f"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-top standard_section   "  style="padding-top: 30px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg  using-bg-color  "  style="background-color: #ffffff; "></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
 	<div  class="vc_col-sm-3 wpb_column column_container vc_column_container col centered-text no-extra-padding"  data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
@@ -733,12 +606,12 @@ Free local language support, 24/7</p>
 		</div>
 	</div> 
 </div></div>
-		<div id="fws_5e03518a31f55"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-top standard_section   "  style="padding-top: 0px; padding-bottom: 25px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg    "  style=""></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
+		<div id="fws_5e0354589a444"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-top standard_section   "  style="padding-top: 0px; padding-bottom: 25px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg    "  style=""></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
 	<div style=" color: #ffffff;" class="vc_col-sm-6 wpb_column column_container vc_column_container col no-extra-padding" data-using-bg="true" data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="true" data-bg-color="#0080ef" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay" style="opacity: 1; background-color: #0080ef;"></div>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
 				
-    	<div id="fws_5e03518a324f0" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row  vc_row-o-equal-height vc_row-flex  vc_row-o-content-top standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  left">
+    	<div id="fws_5e0354589aa06" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row  vc_row-o-equal-height vc_row-flex  vc_row-o-content-top standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  left">
 	<div  class="vc_col-sm-3 wpb_column column_container vc_column_container col centered-text no-extra-padding"   data-t-w-inherits="default" data-shadow="none" data-border-radius="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 		<div class="wpb_wrapper">
@@ -788,7 +661,7 @@ Free local language support, 24/7</p>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
 				
-    	<div id="fws_5e03518a33fdf" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row  vc_row-o-equal-height vc_row-flex  vc_row-o-content-top standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  left">
+    	<div id="fws_5e0354589c23c" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row  vc_row-o-equal-height vc_row-flex  vc_row-o-content-top standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  left">
 	<div  class="vc_col-sm-3 wpb_column column_container vc_column_container col centered-text no-extra-padding"   data-t-w-inherits="default" data-shadow="none" data-border-radius="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 		<div class="wpb_wrapper">
@@ -834,12 +707,12 @@ Free local language support, 24/7</p>
 		</div>
 	</div> 
 </div></div>
-		<div id="fws_5e03518a355a4"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section vertically-align-columns  "  style="padding-top: 40px; padding-bottom: 10px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg    "  style=""></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
+		<div id="fws_5e0354589d7e2"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section vertically-align-columns  "  style="padding-top: 40px; padding-bottom: 10px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg    "  style=""></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
 	<div  class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding"  data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
 				
-    	<div id="fws_5e03518a35965" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  left">
+    	<div id="fws_5e0354589dbbb" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  left">
 	<div  class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding"   data-t-w-inherits="default" data-shadow="none" data-border-radius="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 		<div class="wpb_wrapper">
@@ -848,7 +721,7 @@ Free local language support, 24/7</p>
 	</div>
 	</div> 
 </div></div><div class="divider-wrap" data-alignment="default"><div style="height: 30px;" class="divider"></div></div>
-    	<div id="fws_5e03518a3614b" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  center">
+    	<div id="fws_5e0354589e3a0" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  center">
 	<div  class="vc_col-sm-2 features-column wpb_column column_container vc_column_container col padding-2-percent"   data-t-w-inherits="default" data-shadow="none" data-border-radius="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 		<div class="wpb_wrapper">
@@ -921,7 +794,7 @@ Free local language support, 24/7</p>
 	</div>
 	</div> 
 </div></div>
-    	<div id="fws_5e03518a38f0c" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  center">
+    	<div id="fws_5e035458a0fef" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  center">
 	<div  class="vc_col-sm-2 wpb_column column_container vc_column_container col padding-2-percent"   data-t-w-inherits="default" data-shadow="none" data-border-radius="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 		<div class="wpb_wrapper">
@@ -998,12 +871,12 @@ Free local language support, 24/7</p>
 		</div>
 	</div> 
 </div></div>
-		<div id="fws_5e03518a3bc50"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section   "  style="padding-top: 40px; padding-bottom: 0px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg    "  style=""></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
+		<div id="fws_5e035458a3cd7"  data-midnight="dark"  data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row full-width-content  vc_row-o-equal-height vc_row-flex  vc_row-o-content-middle standard_section   "  style="padding-top: 40px; padding-bottom: 0px; "><div class="row-bg-wrap" data-bg-animation="none"><div class="inner-wrap "><div class="row-bg    "  style=""></div></div><div class="row-bg-overlay" ></div></div><div class="col span_12 dark left">
 	<div style="" class="vc_col-sm-6 column-padding wpb_column column_container vc_column_container col no-extra-padding" data-using-bg="true" data-t-w-inherits="default" data-border-radius="none" data-shadow="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="true" data-bg-color="#ffffff" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay" style="opacity: 1; background-color: #ffffff;"></div>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
 				<h3 style="font-size: 40px;color: #1c1c1c;line-height: 1.4;text-align: left;font-family:Ubuntu;font-weight:500;font-style:normal" class="vc_custom_heading vc_custom_1548603133021" >Get started right now!</h3><h2 style="font-size: 20px;color: #878787;text-align: left;font-family:Ubuntu;font-weight:300;font-style:normal" class="vc_custom_heading" >Sign up to try Simply for free for 30 days - no credit card required.</h2>
-    	<div id="fws_5e03518a3c34c" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  left">
+    	<div id="fws_5e035458a436b" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  left">
 	<div  class="vc_col-sm-12 gform_alternate wpb_column column_container vc_column_container col no-extra-padding"   data-t-w-inherits="default" data-shadow="none" data-border-radius="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 		<div class="wpb_wrapper">
@@ -1044,7 +917,7 @@ Free local language support, 24/7</p>
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
 				
-    	<div id="fws_5e03518a3f18c" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  left">
+    	<div id="fws_5e035458a62d7" data-midnight="" data-column-margin="default" data-bg-mobile-hidden="" class="wpb_row vc_row-fluid vc_row inner_row standard_section    "  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap"> <div class="row-bg   "  style=""></div> </div><div class="col span_12  left">
 	<div style=" color: #ffffff;" class="vc_col-sm-6 column-padding wpb_column column_container vc_column_container col no-extra-padding" data-cfc="true"  data-t-w-inherits="default" data-shadow="none" data-border-radius="none" data-border-animation="" data-border-animation-delay="" data-border-width="none" data-border-style="solid" data-border-color="" data-bg-cover="" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-hover-bg="" data-hover-bg-opacity="1" data-animation="" data-delay="0"><div class="column-bg-overlay"></div>
 		<div class="vc_column-inner">
 		<div class="wpb_wrapper">
